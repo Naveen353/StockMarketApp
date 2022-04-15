@@ -17,6 +17,7 @@ import androidx.navigation.ActivityNavigator
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import com.plcoding.stockmarketapp.domain.model.CompanyListing
+import com.plcoding.stockmarketapp.presentation.destinations.CompanyInfoScreenDestination
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
@@ -67,6 +68,9 @@ fun CompanyListingScreen(
                             .fillMaxWidth()
                             .clickable {
                                 //Navigate to Detail
+                                navigator.navigate(
+                                    CompanyInfoScreenDestination(symbol = company.symbol)
+                                )
                             }
                             .padding(16.dp)
 
